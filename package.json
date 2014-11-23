@@ -1,0 +1,27 @@
+{
+  "name": "idb-range",
+  "description": "MongoDB inspired interface for IDBKeyRange",
+  "repository": "git://github.com/treojs/idb-range.git",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "IndexedDB",
+    "treo"
+  ],
+  "scripts": {
+    "build": "browserify -s idb-range lib/index.js > dist/idb-range.js",
+    "test": "browserify-test",
+    "start": "browserify-test -w"
+  },
+  "devDependencies": {
+    "browserify-test": "^1.0.0",
+    "browserify": "*",
+    "chai": "*"
+  },
+  "files": [
+    "lib",
+    "Readme.md",
+    "History.md"
+  ]
+}

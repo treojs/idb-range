@@ -1,0 +1,19 @@
+{
+  "name": "idb-range",
+  "description": "MongoDB inspired interface for IDBKeyRange",
+  "repository": "git://github.com/treojs/idb-range.git",
+  "version": "1.0.0",
+  "keywords": [
+    "IndexedDB",
+    "treo"
+  ],
+  "ignore": [
+    "**/.*",
+    "lib/",
+    "test/",
+    "package.json"
+  ],
+  "main": [
+    "dist/idb-range.js"
+  ]
+}
