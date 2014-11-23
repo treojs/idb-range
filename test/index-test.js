@@ -5,6 +5,8 @@ describe('idb-val', function() {
   var x = '1', y = '2', z = '3', val;
 
   before(function() {
+    if (window.IDBKeyRange) return;
+
     var IDBKeyRange = function(lower, upper, lowerOpen, upperOpen) {
       this.lower = lower;
       this.upper = upper;
@@ -23,6 +25,7 @@ describe('idb-val', function() {
     IDBKeyRange.bound = function(lower, upper, lowerOpen, upperOpen) {
       return new IDBKeyRange(lower, upper, lowerOpen || false, upperOpen || false);
     };
+
     // expose to `window`.
     window.IDBKeyRange = IDBKeyRange;
   });
