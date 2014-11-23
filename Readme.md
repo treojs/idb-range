@@ -1,6 +1,6 @@
 # idb-range [![Build Status](https://travis-ci.org/treojs/idb-range.png?branch=master)](https://travis-ci.org/treojs/idb-range)
 
-Easy to remember interface for `IDBKeyRange`.
+Simple MongoDB inspired interface for `IDBKeyRange`.
 
 ## Installation
 
@@ -12,7 +12,7 @@ bower install idb-range
 Standalone build available as [dist/idb-range.js](./dist/idb-range.js).
 
 ```html
-<script src="storage.js"></script>
+<script src="dist/idb-range.js"></script>
 <script>window.idbRange({ gte: 'abc' });</script>
 ```
 
