@@ -1,8 +1,8 @@
 var expect = require('chai').expect;
-var parseRange = require('../lib');
+var range = require('../lib');
 
-describe('idb-range', function() {
-  var x = '1', y = '2', z = '3', range;
+describe('idb-val', function() {
+  var x = '1', y = '2', z = '3', val;
 
   before(function() {
     var IDBKeyRange = function(lower, upper, lowerOpen, upperOpen) {
@@ -28,81 +28,81 @@ describe('idb-range', function() {
   });
 
   it('validates arguments', function() {
-    expect(function() { parseRange({ g: 2 }) }).throw('`g` is not valid key');
-    expect(function() { parseRange({ gt: 2, gte: 5 }) }).throw('conflicted keys');
-    expect(function() { parseRange({ lt: 'a', gte: 'ba', lte: 'c' }) }).throw('conflicted keys');
-    expect(function() { parseRange(1) }).throw('invalid range');
+    expect(function() { range({ g: 2 }) }).throw('`g` is not valid key');
+    expect(function() { range({ gt: 2, gte: 5 }) }).throw('conflicted keys');
+    expect(function() { range({ lt: 'a', gte: 'ba', lte: 'c' }) }).throw('conflicted keys');
+    expect(function() { range(1) }).throw('invalid range');
   });
 
-  it('all keys ≤ x', function() {
-    range = parseRange({ lte: x });
-    expect(range.upperOpen).false;
-    expect(range.lowerOpen).true;
-    expect(range.upper).equal(x);
-    expect(range.lower).undefined;
+  it('all keys <= x', function() {
+    val = range({ lte: x });
+    expect(val.upperOpen).false;
+    expect(val.lowerOpen).true;
+    expect(val.upper).equal(x);
+    expect(val.lower).undefined;
   });
 
   it('all keys < x', function() {
-    range = parseRange({ lt: x });
-    expect(range.upperOpen).true;
-    expect(range.lowerOpen).true;
-    expect(range.upper).equal(x);
-    expect(range.lower).undefined;
+    val = range({ lt: x });
+    expect(val.upperOpen).true;
+    expect(val.lowerOpen).true;
+    expect(val.upper).equal(x);
+    expect(val.lower).undefined;
   });
 
-  it('all keys ≤ y', function() {
-    range = parseRange({ gte: y });
-    expect(range.upperOpen).true;
-    expect(range.lowerOpen).false;
-    expect(range.upper).undefined;
-    expect(range.lower).equal(y);
+  it('all keys >= y', function() {
+    val = range({ gte: y });
+    expect(val.upperOpen).true;
+    expect(val.lowerOpen).false;
+    expect(val.upper).undefined;
+    expect(val.lower).equal(y);
   });
 
   it('all keys > y', function() {
-    range = parseRange({ gt: y });
-    expect(range.upperOpen).true;
-    expect(range.lowerOpen).true;
-    expect(range.upper).undefined;
-    expect(range.lower).equal(y);
+    val = range({ gt: y });
+    expect(val.upperOpen).true;
+    expect(val.lowerOpen).true;
+    expect(val.upper).undefined;
+    expect(val.lower).equal(y);
   });
 
-  it('all keys ≤ x && ≤ y', function() {
-    range = parseRange({ lte: x, gte: y });
-    expect(range.upperOpen).false;
-    expect(range.lowerOpen).false;
-    expect(range.upper).equal(x);
-    expect(range.lower).equal(y);
+  it('all keys >= x && <= y', function() {
+    val = range({ lte: y, gte: x });
+    expect(val.upperOpen).false;
+    expect(val.lowerOpen).false;
+    expect(val.upper).equal(y);
+    expect(val.lower).equal(x);
   });
 
   it('all keys > x && < y', function() {
-    range = parseRange({ lt: x, gt: y });
-    expect(range.upperOpen).true;
-    expect(range.lowerOpen).true;
-    expect(range.upper).equal(x);
-    expect(range.lower).equal(y);
+    val = range({ gt: x, lt: y });
+    expect(val.upperOpen).true;
+    expect(val.lowerOpen).true;
+    expect(val.upper).equal(y);
+    expect(val.lower).equal(x);
   });
 
-  it('all keys > x && ≤ y', function() {
-    range = parseRange({ lt: x, gte: y });
-    expect(range.upperOpen).true;
-    expect(range.lowerOpen).false;
-    expect(range.upper).equal(x);
-    expect(range.lower).equal(y);
+  it('all keys > x && <= y', function() {
+    val = range({ gt: x, lte: y });
+    expect(val.upperOpen).false;
+    expect(val.lowerOpen).true;
+    expect(val.upper).equal(y);
+    expect(val.lower).equal(x);
   });
 
-  it('all keys ≤ x && < y', function() {
-    range = parseRange({ lte: x, gt: y });
-    expect(range.upperOpen).false;
-    expect(range.lowerOpen).true;
-    expect(range.upper).equal(x);
-    expect(range.lower).equal(y);
+  it('all keys >= x && < y', function() {
+    val = range({ lt: y, gte: x });
+    expect(val.upperOpen).true;
+    expect(val.lowerOpen).false;
+    expect(val.upper).equal(y);
+    expect(val.lower).equal(x);
   });
 
   it('the key = z', function() {
-    range = parseRange({ eq: z });
-    expect(range.upperOpen).false;
-    expect(range.lowerOpen).false;
-    expect(range.upper).equal(z);
-    expect(range.lower).equal(z);
+    val = range({ eq: z });
+    expect(val.upperOpen).false;
+    expect(val.lowerOpen).false;
+    expect(val.upper).equal(z);
+    expect(val.lower).equal(z);
   });
 });
