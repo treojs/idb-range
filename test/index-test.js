@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var range = require('../lib');
 
-describe('idb-val', function() {
+describe('idb-parse', function() {
   var x = '1', y = '2', z = '3', val;
 
   before(function() {
