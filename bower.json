@@ -1,6 +1,6 @@
 {
   "name": "idb-range",
-  "description": "MongoDB inspired interface for IDBKeyRange",
+  "description": "Easy to remember interface for IDBKeyRange",
   "repository": "git://github.com/treojs/idb-range.git",
   "version": "1.0.0",
   "keywords": [
