@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "keywords": [
     "IndexedDB",
-    "treo"
+    "treo",
+    "MongoDB"
   ],
   "ignore": [
     "**/.*",

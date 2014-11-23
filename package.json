@@ -10,7 +10,7 @@
     "treo"
   ],
   "scripts": {
-    "build": "browserify -s idb-range lib/index.js > dist/idb-range.js",
+    "build": "browserify -s idbRange lib/index.js > dist/idb-range.js",
     "test": "browserify-test",
     "start": "browserify-test -w"
   },
