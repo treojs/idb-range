@@ -5,15 +5,7 @@ Simple MongoDB inspired interface for `IDBKeyRange`.
 ## Installation
 
 ```bash
-npm install idb-range
-bower install idb-range
-```
-
-Standalone build available as [dist/idb-range.js](./dist/idb-range.js).
-
-```html
-<script src="dist/idb-range.js"></script>
-<script>window.idbRange({ gte: 'abc' });</script>
+npm install --save idb-range
 ```
 
 ## Example
