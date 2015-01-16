@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var range = require('../lib');
 
-describe('idb-parse', function() {
+describe('idb-range', function() {
   var x = '1', y = '2', z = '3', val;
 
   before(function() {
@@ -34,7 +34,6 @@ describe('idb-parse', function() {
     expect(function() { range({ g: 2 }) }).throw('`g` is not valid key');
     expect(function() { range({ gt: 2, gte: 5 }) }).throw('conflicted keys');
     expect(function() { range({ lt: 'a', gte: 'ba', lte: 'c' }) }).throw('conflicted keys');
-    expect(function() { range(1) }).throw('invalid range');
   });
 
   it('all keys <= x', function() {
@@ -103,6 +102,14 @@ describe('idb-parse', function() {
 
   it('the key = z', function() {
     val = range({ eq: z });
+    expect(val.upperOpen).false;
+    expect(val.lowerOpen).false;
+    expect(val.upper).equal(z);
+    expect(val.lower).equal(z);
+  });
+
+  it('allows any value', function() {
+    val = range(z);
     expect(val.upperOpen).false;
     expect(val.lowerOpen).false;
     expect(val.upper).equal(z);

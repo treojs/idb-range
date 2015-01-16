@@ -15,14 +15,16 @@ var range = require('idb-range');
 
 range({ lte: 'a', gt: 'b' }); // IDBKeyRange {lower: "a", upper: "b", lowerOpen: true, upperOpen: true}
 range({ gte: 'c' }); // IDBKeyRange {lower: "c", upper: undefined, lowerOpen: false, upperOpen: true}
-range({ eq: 'd' }); // IDBKeyRange {lower: "d", upper: "3", lowerOpen: false, upperOpen: false}
+
+// it accepts a specific value as a shortcut to IDBKeyRange.only
+range('hello'); // IDBKeyRange {lower: "hello", upper: "hello", lowerOpen: false, upperOpen: false}
 ```
 
 ## range(opts)
 
 Parse `opts` to valid [`IDBKeyRange`](https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange).
 
-Available options:
+Available options, when `opts` is an object:
 
 * `eq` - equal
 * `gt` - greater
