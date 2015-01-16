@@ -115,4 +115,8 @@ describe('idb-range', function() {
     expect(val.upper).equal(z);
     expect(val.lower).equal(z);
   });
+
+  it('returns nothing when key is undefined', function() {
+    expect(range()).undefined;
+  });
 });
