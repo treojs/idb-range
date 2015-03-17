@@ -14,8 +14,8 @@
     "start": "browserify-test -w"
   },
   "devDependencies": {
-    "browserify-test": "^1.0.1",
-    "chai": "*"
+    "browserify-test": "^1.1.0",
+    "chai": "^2.1.2"
   },
   "files": [
     "lib"
