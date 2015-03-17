@@ -5,7 +5,7 @@ describe('idb-range', function() {
   var x = '1', y = '2', z = '3', val;
 
   before(function() {
-    if (window.IDBKeyRange) return;
+    if (global.IDBKeyRange) return;
 
     var IDBKeyRange = function(lower, upper, lowerOpen, upperOpen) {
       this.lower = lower;
@@ -26,8 +26,8 @@ describe('idb-range', function() {
       return new IDBKeyRange(lower, upper, lowerOpen || false, upperOpen || false);
     };
 
-    // expose to `window`.
-    window.IDBKeyRange = IDBKeyRange;
+    // expose to `global`.
+    global.IDBKeyRange = IDBKeyRange;
   });
 
   it('validates arguments', function() {
