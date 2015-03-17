@@ -2,7 +2,7 @@ var expect = require('chai').expect;
 var range = require('../lib');
 
 describe('idb-range', function() {
-  var x = '1', y = '2', z = '3', val;
+  var x = '1', y = '2', z = ['3', '4'], val;
 
   before(function() {
     if (global.IDBKeyRange) return;
@@ -104,8 +104,8 @@ describe('idb-range', function() {
     val = range({ eq: z });
     expect(val.upperOpen).false;
     expect(val.lowerOpen).false;
-    expect(val.upper).equal(z);
-    expect(val.lower).equal(z);
+    expect(val.upper).eq(z);
+    expect(val.lower).eq(z);
   });
 
   it('allows any value', function() {
