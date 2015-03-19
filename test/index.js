@@ -1,33 +1,12 @@
 var expect = require('chai').expect;
 var range = require('../lib');
+var idbPolyfill = require('idb-polyfill');
 
 describe('idb-range', function() {
   var x = '1', y = '2', z = ['3', '4'], val;
 
   before(function() {
-    if (global.IDBKeyRange) return;
-
-    var IDBKeyRange = function(lower, upper, lowerOpen, upperOpen) {
-      this.lower = lower;
-      this.upper = upper;
-      this.lowerOpen = lowerOpen;
-      this.upperOpen = upperOpen;
-    };
-    IDBKeyRange.only = function(value) {
-      return new IDBKeyRange(value, value, false, false);
-    };
-    IDBKeyRange.lowerBound = function(value, open) {
-      return new IDBKeyRange(value, undefined, open || false, true);
-    };
-    IDBKeyRange.upperBound = function(value, open) {
-      return new IDBKeyRange(undefined, value, true, open || false);
-    };
-    IDBKeyRange.bound = function(lower, upper, lowerOpen, upperOpen) {
-      return new IDBKeyRange(lower, upper, lowerOpen || false, upperOpen || false);
-    };
-
-    // expose to `global`.
-    global.IDBKeyRange = IDBKeyRange;
+    if (!global.IDBKeyRange) global.IDBKeyRange = idbPolyfill.IDBKeyRange;
   });
 
   it('validates arguments', function() {
