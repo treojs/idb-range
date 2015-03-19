@@ -1,6 +1,6 @@
 # idb-range [![Build Status](https://travis-ci.org/treojs/idb-range.png?branch=master)](https://travis-ci.org/treojs/idb-range)
 
-Simple MongoDB inspired interface for `IDBKeyRange`.
+A MongoDB inspired interface for `IDBKeyRange`.
 
 ## Installation
 

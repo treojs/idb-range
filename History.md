@@ -1,3 +1,8 @@
+## 2.2.0 / 2015-03-19
+
+* improve object type check
+* use `idb-polyfill` to polyfill IDBKeyRange
+
 ## 2.1.0 / 2015-03-17
 
 * use `global` instead of `window` to support node/web-workers env
