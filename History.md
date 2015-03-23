@@ -1,3 +1,7 @@
+## 2.3.0 / 2015-03-23
+
+* remove `component-type` as dependency
+
 ## 2.2.0 / 2015-03-19
 
 * improve object type check
@@ -16,4 +20,4 @@
 
 ## 1.0.0 / 2014-11-23
 
-* extracted from treo :sparkles:
+* extracted from [treo](http://treojs.com) :sparkles:
