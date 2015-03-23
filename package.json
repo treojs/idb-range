@@ -13,9 +13,6 @@
     "test": "browserify-test",
     "start": "browserify-test -w"
   },
-  "dependencies": {
-    "component-type": "^1.1.0"
-  },
   "devDependencies": {
     "browserify-test": "^1.1.0",
     "chai": "^2.1.2",
