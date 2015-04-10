@@ -1,12 +1,14 @@
-# idb-range [![Build Status](https://travis-ci.org/treojs/idb-range.png?branch=master)](https://travis-ci.org/treojs/idb-range)
+# idb-range
+
+[![](https://img.shields.io/npm/v/idb-range.svg)](https://npmjs.org/package/idb-range)
+[![](https://img.shields.io/travis/treojs/idb-range.svg)](https://travis-ci.org/treojs/idb-range)
+[![](http://img.shields.io/npm/dm/idb-range.svg)](https://npmjs.org/package/idb-range)
 
 A MongoDB inspired interface for `IDBKeyRange`.
 
 ## Installation
 
-```bash
-npm install --save idb-range
-```
+    npm install --save idb-range
 
 ## Example
 
