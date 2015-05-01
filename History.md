@@ -1,3 +1,7 @@
+## 2.3.1 / 2015-05-01
+
+* minor code style changes
+
 ## 2.3.0 / 2015-03-23
 
 * remove `component-type` as dependency
