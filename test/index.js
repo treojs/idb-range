@@ -95,6 +95,8 @@ describe('idb-range', function() {
   })
 
   it('returns nothing when key is undefined', function() {
-    expect(range()).undefined
+    global.shimIndexedDB
+      ? expect(range()).undefined
+      : expect(range()).null
   })
 })
