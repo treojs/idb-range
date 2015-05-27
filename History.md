@@ -1,3 +1,7 @@
+## 2.4.0 / 2015-05-27
+
+* fix support of indexedDBShim and Safari
+
 ## 2.3.1 / 2015-05-01
 
 * minor code style changes
