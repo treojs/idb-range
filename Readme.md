@@ -4,7 +4,7 @@
 [![](https://img.shields.io/travis/treojs/idb-range.svg)](https://travis-ci.org/treojs/idb-range)
 [![](http://img.shields.io/npm/dm/idb-range.svg)](https://npmjs.org/package/idb-range)
 
-A MongoDB inspired interface for `IDBKeyRange`.
+MongoDB inspired interface for `IDBKeyRange`.
 
 ## Installation
 
