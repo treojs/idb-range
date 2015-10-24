@@ -20,6 +20,10 @@ range({ gte: 'c' }) // IDBKeyRange {lower: "c", upper: undefined, lowerOpen: fal
 
 // it accepts a specific value as a shortcut to IDBKeyRange.only
 range('hello') // IDBKeyRange {lower: "hello", upper: "hello", lowerOpen: false, upperOpen: false}
+
+// IDBKeyRange and no arguments are ignored
+range(IDBKeyRange.only('hello')) // ignores IDBKeyRange instances
+range() // null
 ```
 
 ## range(opts)
@@ -36,4 +40,4 @@ Available options, when `opts` is an object:
 
 ## License
 
-MIT
+[MIT](./LICENSE)
