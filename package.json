@@ -14,11 +14,13 @@
   "scripts": {
     "test": "browserify-test",
     "start": "browserify-test -w"
+    "test": "eslint lib/ test/ && browserify-test",
   },
   "devDependencies": {
     "browserify-test": "^1.2.0",
     "chai": "^2.3.0",
     "idb-polyfill": "0.0.2"
+    "eslint": "^1.7.3",
   },
   "files": [
     "lib"
