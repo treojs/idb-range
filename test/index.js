@@ -1,6 +1,6 @@
+require('treo-websql').polyfill()
 var expect = require('chai').expect
 var range = require('../lib')
-if (!global.IDBKeyRange) require('idb-polyfill').polyfill()
 
 describe('idb-range', function() {
   var x = '1'

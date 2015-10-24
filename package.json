@@ -19,8 +19,8 @@
   "devDependencies": {
     "browserify-test": "^1.2.0",
     "chai": "^2.3.0",
-    "idb-polyfill": "0.0.2"
     "eslint": "^1.7.3",
+    "treo-websql": "^2.0.0"
   },
   "files": [
     "lib"
