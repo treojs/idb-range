@@ -1,3 +1,10 @@
+## 3.0.0 / 2015-10-24
+
+* return `null` for empty arguments
+* documentation for non-object arguments
+* use treo-websql to polyfill `IDBKeyRange`
+* use eslint
+
 ## 2.4.0 / 2015-05-27
 
 * fix support of indexedDBShim and Safari
@@ -28,4 +35,4 @@
 
 ## 1.0.0 / 2014-11-23
 
-* extracted from [treo](http://treojs.com) :sparkles:
+* extracted from [treo](https://github.com/treojs/treo) :sparkles:
