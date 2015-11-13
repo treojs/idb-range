@@ -1,3 +1,11 @@
+## 3.1.0 / 2015-11-13
+
+* full rewwrite with ES6 and babel@6
+* use `is-plain-obj` to check object argument
+* change exception messages
+* use zuul to test in all supported browsers
+* minor docs updates
+
 ## 3.0.0 / 2015-10-24
 
 * return `null` for empty arguments
