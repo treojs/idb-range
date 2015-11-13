@@ -16,8 +16,8 @@
   ],
   "scripts": {
     "prepublish": "babel src --out-dir lib --presets es2015",
-    "test": "eslint src/ test/ && browserify-test",
-    "development": "browserify-test --watch"
+    "test": "eslint src/ test/ && browserify-test --transform [ babelify --presets es2015 ]",
+    "development": "browserify-test --transform [ babelify --presets es2015 ] --watch"
   },
   "dependencies": {
     "is-plain-obj": "^1.1.0"

@@ -10,7 +10,7 @@ describe('idb-range', () => {
   let val
 
   it('validates arguments', () => {
-    expect(() => { range({ g: 2 }) }).throw('`g` is not valid key')
+    expect(() => { range({ g: 2 }) }).throw('not valid key')
     expect(() => { range({ gt: 2, gte: 5 }) }).throw('conflicted keys')
     expect(() => { range({ lt: 'a', gte: 'ba', lte: 'c' }) }).throw('conflicted keys')
   })
