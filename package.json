@@ -1,22 +1,22 @@
 {
   "name": "idb-range",
   "description": "MongoDB inspired interface for IDBKeyRange",
-  "repository": "git://github.com/treojs/idb-range.git",
+  "repository": "treojs/idb-range",
   "version": "3.0.0",
   "license": "MIT",
-  "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
   "keywords": [
     "indexeddb",
     "idbkeyrange",
     "range",
     "treo"
   ],
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "prepublish": "babel src --out-dir lib --presets es2015",
-    "test": "eslint src/ test/ && browserify-test --transform [ babelify --presets es2015 ]",
+    "test": "eslint src/ test/index.js && browserify-test --transform [ babelify --presets es2015 ] && SAUCE_USERNAME=idb-range zuul -- test/index.js",
     "development": "browserify-test --transform [ babelify --presets es2015 ] --watch"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "chai": "^3.4.1",
     "eslint": "^1.9.0",
     "eslint-config-airbnb": "^1.0.0",
-    "treo-websql": "^2.0.0"
+    "treo-websql": "^2.0.0",
+    "zuul": "^3.7.2"
   }
 }

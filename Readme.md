@@ -1,10 +1,13 @@
 # idb-range
 
+> MongoDB inspired interface for `IDBKeyRange`.
+
+[![](https://saucelabs.com/browser-matrix/idb-range.svg)](https://saucelabs.com/u/idb-range)
+
 [![](https://img.shields.io/npm/v/idb-range.svg)](https://npmjs.org/package/idb-range)
 [![](https://img.shields.io/travis/treojs/idb-range.svg)](https://travis-ci.org/treojs/idb-range)
 [![](http://img.shields.io/npm/dm/idb-range.svg)](https://npmjs.org/package/idb-range)
 
-MongoDB inspired interface for `IDBKeyRange`.
 
 ## Installation
 
