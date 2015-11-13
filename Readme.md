@@ -13,13 +13,15 @@ MongoDB inspired interface for `IDBKeyRange`.
 ## Example
 
 ```js
-var range = require('idb-range')
+import range from 'idb-range'
 
 range({ lte: 'a', gt: 'b' }) // IDBKeyRange {lower: "a", upper: "b", lowerOpen: true, upperOpen: true}
 range({ gte: 'c' }) // IDBKeyRange {lower: "c", upper: undefined, lowerOpen: false, upperOpen: true}
 
 // it accepts a specific value as a shortcut to IDBKeyRange.only
 range('hello') // IDBKeyRange {lower: "hello", upper: "hello", lowerOpen: false, upperOpen: false}
+// but it's more convenient to use
+range({ eq: 'hello' })
 
 // IDBKeyRange and no arguments are ignored
 range(IDBKeyRange.only('hello')) // ignores IDBKeyRange instances

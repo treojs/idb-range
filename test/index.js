@@ -2,13 +2,12 @@ import treoWebsql from 'treo-websql'
 import { expect } from 'chai'
 import range from '../src'
 
+const x = '1'
+const y = '2'
+const z = '3'
 treoWebsql.polyfill()
-describe('idb-range', () => {
-  const x = '1'
-  const y = '2'
-  const z = ['3', '4']
-  let val
 
+describe('idb-range', () => {
   it('validates arguments', () => {
     expect(() => { range({ g: 2 }) }).throw('not valid key')
     expect(() => { range({ gt: 2, gte: 5 }) }).throw('conflicted keys')
@@ -16,7 +15,7 @@ describe('idb-range', () => {
   })
 
   it('all keys <= x', () => {
-    val = range({ lte: x })
+    const val = range({ lte: x })
     expect(val.upperOpen).equal(false)
     expect(val.lowerOpen).equal(true)
     expect(val.upper).equal(x)
@@ -24,7 +23,7 @@ describe('idb-range', () => {
   })
 
   it('all keys < x', () => {
-    val = range({ lt: x })
+    const val = range({ lt: x })
     expect(val.upperOpen).equal(true)
     expect(val.lowerOpen).equal(true)
     expect(val.upper).equal(x)
@@ -32,7 +31,7 @@ describe('idb-range', () => {
   })
 
   it('all keys >= y', () => {
-    val = range({ gte: y })
+    const val = range({ gte: y })
     expect(val.upperOpen).equal(true)
     expect(val.lowerOpen).equal(false)
     expect(val.upper).equal(undefined)
@@ -40,7 +39,7 @@ describe('idb-range', () => {
   })
 
   it('all keys > y', () => {
-    val = range({ gt: y })
+    const val = range({ gt: y })
     expect(val.upperOpen).equal(true)
     expect(val.lowerOpen).equal(true)
     expect(val.upper).equal(undefined)
@@ -48,7 +47,7 @@ describe('idb-range', () => {
   })
 
   it('all keys >= x && <= y', () => {
-    val = range({ lte: y, gte: x })
+    const val = range({ lte: y, gte: x })
     expect(val.upperOpen).equal(false)
     expect(val.lowerOpen).equal(false)
     expect(val.upper).equal(y)
@@ -56,7 +55,7 @@ describe('idb-range', () => {
   })
 
   it('all keys > x && < y', () => {
-    val = range({ gt: x, lt: y })
+    const val = range({ gt: x, lt: y })
     expect(val.upperOpen).equal(true)
     expect(val.lowerOpen).equal(true)
     expect(val.upper).equal(y)
@@ -64,7 +63,7 @@ describe('idb-range', () => {
   })
 
   it('all keys > x && <= y', () => {
-    val = range({ gt: x, lte: y })
+    const val = range({ gt: x, lte: y })
     expect(val.upperOpen).equal(false)
     expect(val.lowerOpen).equal(true)
     expect(val.upper).equal(y)
@@ -72,7 +71,7 @@ describe('idb-range', () => {
   })
 
   it('all keys >= x && < y', () => {
-    val = range({ lt: y, gte: x })
+    const val = range({ lt: y, gte: x })
     expect(val.upperOpen).equal(true)
     expect(val.lowerOpen).equal(false)
     expect(val.upper).equal(y)
@@ -80,7 +79,7 @@ describe('idb-range', () => {
   })
 
   it('the key = z', () => {
-    val = range({ eq: z })
+    const val = range({ eq: z })
     expect(val.upperOpen).equal(false)
     expect(val.lowerOpen).equal(false)
     expect(val.upper).eql(z)
@@ -88,7 +87,7 @@ describe('idb-range', () => {
   })
 
   it('allows any value', () => {
-    val = range(z)
+    const val = range(z)
     expect(val.upperOpen).equal(false)
     expect(val.lowerOpen).equal(false)
     expect(val.upper).eql(z)
