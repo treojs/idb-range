@@ -8,7 +8,7 @@ import isPlainObject from 'is-plain-obj'
  * @return {IDBKeyRange}
  */
 
-export default function range(opts) {
+module.exports = function range(opts) {
   const IDBKeyRange = global.IDBKeyRange || global.webkitIDBKeyRange
   if (opts instanceof IDBKeyRange) return opts
   if (typeof opts === 'undefined') return null
