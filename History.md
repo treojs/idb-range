@@ -1,3 +1,7 @@
+## 3.1.1 / 2015-11-13
+
+* fix module export #2
+
 ## 3.1.0 / 2015-11-13
 
 * full rewwrite with ES6 and babel@6
