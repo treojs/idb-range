@@ -8,7 +8,6 @@
 [![](https://img.shields.io/travis/treojs/idb-range.svg)](https://travis-ci.org/treojs/idb-range)
 [![](http://img.shields.io/npm/dm/idb-range.svg)](https://npmjs.org/package/idb-range)
 
-
 ## Installation
 
     npm install --save idb-range
@@ -23,7 +22,7 @@ range({ gte: 'c' }) // IDBKeyRange {lower: "c", upper: undefined, lowerOpen: fal
 
 // it accepts a specific value as a shortcut to IDBKeyRange.only
 range('hello') // IDBKeyRange {lower: "hello", upper: "hello", lowerOpen: false, upperOpen: false}
-// but it's more convenient to use
+// but it's more explicit to always use object notation
 range({ eq: 'hello' })
 
 // IDBKeyRange and no arguments are ignored
