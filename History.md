@@ -1,6 +1,10 @@
-## 3.1.1 / 2015-11-13
+## 3.1.2 / 2015-11-19
 
-* fix module export #2
+* compile with [add-module-exports](https://github.com/59naga/babel-plugin-add-module-exports) to provide ES6 modules and CommonJS support
+
+## 3.1.1 / 2015-11-18
+
+* fix module export [#2](https://github.com/treojs/idb-range/issues/2)
 
 ## 3.1.0 / 2015-11-13
 
@@ -12,7 +16,7 @@
 
 ## 3.0.0 / 2015-10-24
 
-* return `null` for empty arguments
+* **breaking:** return `null` for empty arguments
 * documentation for non-object arguments
 * use treo-websql to polyfill `IDBKeyRange`
 * use eslint
@@ -41,9 +45,9 @@
 
 ## 2.0.0 / 2015-01-16
 
+* **breaking:** ignore empty values
 * remove bower and standalone support
 * allow any value as a shortcut for `IDBKeyRange.only`
-* ignore empty values
 
 ## 1.0.0 / 2014-11-23
 
