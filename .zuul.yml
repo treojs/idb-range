@@ -3,6 +3,7 @@ browserify:
   - transform:
       name: babelify
       presets: es2015
+      plugins: add-module-exports
 browsers:
   - name: chrome
     version: -1..latest

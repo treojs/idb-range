@@ -15,17 +15,18 @@
     "lib"
   ],
   "scripts": {
-    "prepublish": "babel src --out-dir lib --presets es2015",
-    "test": "eslint src/ test/index.js && browserify-test --transform [ babelify --presets es2015 ] && SAUCE_USERNAME=idb-range zuul -- test/index.js",
-    "development": "browserify-test --transform [ babelify --presets es2015 ] --watch"
+    "prepublish": "babel src --out-dir lib",
+    "test": "eslint src/ test/ && browserify-test -t babelify && SAUCE_USERNAME=idb-range zuul -- test/index.js",
+    "development": "browserify-test -t babelify --watch"
   },
   "dependencies": {
     "is-plain-obj": "^1.1.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.1.18",
-    "babel-core": "^6.1.20",
+    "babel-cli": "^6.2.0",
+    "babel-core": "^6.2.0",
     "babel-eslint": "^4.1.5",
+    "babel-plugin-add-module-exports": "^0.1.1",
     "babel-preset-es2015": "^6.1.18",
     "babelify": "^7.2.0",
     "browserify-test": "^2.1.2",
