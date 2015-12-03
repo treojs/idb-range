@@ -1,11 +1,10 @@
-import treoWebsql from 'treo-websql'
+import 'indexeddbshim'
 import { expect } from 'chai'
 import range from '../src'
 
 const x = '1'
 const y = '2'
 const z = '3'
-treoWebsql.polyfill()
 
 describe('idb-range', () => {
   it('validates arguments', () => {
@@ -94,7 +93,22 @@ describe('idb-range', () => {
     expect(val.lower).eql(z)
   })
 
-  it('returns nothing when key is undefined', () => {
+  it('returns null when key is undefined', () => {
     expect(range()).equal(null)
   })
 })
+
+/**
+ * Fix shim to follow ranges spec.
+ * https://github.com/axemclion/IndexedDBShim/issues/212
+ */
+
+if (global.IDBKeyRange === global.shimIndexedDB.modules.IDBKeyRange) {
+  IDBKeyRange.lowerBound = function lowerBound(value, open) {
+    return new IDBKeyRange(value, undefined, open || false, true)
+  }
+
+  IDBKeyRange.upperBound = function upperBound(value, open) {
+    return new IDBKeyRange(undefined, value, true, open || false)
+  }
+}
