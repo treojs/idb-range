@@ -1,3 +1,7 @@
+## 3.1.3 / 2015-12-06
+
+* ignore `null` value
+
 ## 3.1.2 / 2015-11-19
 
 * compile with [add-module-exports](https://github.com/59naga/babel-plugin-add-module-exports) to provide ES6 modules and CommonJS support
