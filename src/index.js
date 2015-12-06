@@ -11,7 +11,7 @@ import isPlainObject from 'is-plain-obj'
 export default function range(opts) {
   const IDBKeyRange = global.IDBKeyRange || global.webkitIDBKeyRange
   if (opts instanceof IDBKeyRange) return opts
-  if (typeof opts === 'undefined') return null
+  if (typeof opts === 'undefined' || opts === null) return null
   if (!isPlainObject(opts)) return IDBKeyRange.only(opts)
   const keys = Object.keys(opts).sort()
 
